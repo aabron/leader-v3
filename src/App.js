@@ -1,9 +1,9 @@
-
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className='bg-offwhite w-screen h-screen'>
-
+    <div>
+      <Navbar />
     </div>
   );
 }
