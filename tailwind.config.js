@@ -6,7 +6,10 @@ module.exports = {
     colors: {
       'offwhite': '#EEEEEE' ,
       'navy': '#000080',
-    }
+    },
+    fontFamily: {
+      display: ["Rubik", "sans-serif"], 
+    },
   },
   plugins: [],
 }
