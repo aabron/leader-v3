@@ -7,7 +7,8 @@ module.exports = {
       'offwhite': '#EEEEEE' ,
       'navy': '#000080',
       'black': '#000000',
-      'gray': '#999999'
+      'gray': '#999999',
+      'moneygreen': '387B69'
     },
     fontFamily: {
       display: ["Rubik", "sans-serif"], 
