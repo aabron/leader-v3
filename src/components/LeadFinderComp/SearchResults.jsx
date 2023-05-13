@@ -24,21 +24,25 @@ const SearchResults = () => {
                 </div>
 
                 <h2 className="text-lg text-gray my-4">Type Of Place</h2>
-                <div className="flex flex-row">
+                <div className="flex flex-grid">
                     <div className="flex flex-col w-full">
-                        <input type="checkbox" id="topping" name="topping" value="All"/>
-                        <input type="checkbox" id="topping" name="topping" value="Building" />
-                        <input type="checkbox" id="topping" name="topping" value="Apartment" />
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="All"/>    All</label>
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="Building" />   Building</label>
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="Apartment" />    Apartment</label>
                     </div>
                     <div className="flex flex-col w-full justify-center">
-                        <input type="checkbox" id="topping" name="topping" value="All"/>
-                        <input type="checkbox" id="topping" name="topping" value="Building"/>
-                        <input type="checkbox" id="topping" name="topping" value="Apartment"/>
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="Office"/>    Office</label>
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="Commercial" />   Commercial</label>
+                        <label className="mx-5 my-3"><input type="checkbox" id="topping" name="topping" value="House" />    House</label>
                     </div>
                 </div>
                 <h2 className="text-lg text-gray my-4">Price Range</h2>
                 <div>
                     <RangeSlider />
+                </div>
+                <h2 className="text-lg text-gray my-10">Size</h2>
+                <div>
+                    
                 </div>
             </div>
             <div className="col-start-2 col-span-2">
