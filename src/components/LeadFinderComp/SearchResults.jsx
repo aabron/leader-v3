@@ -3,20 +3,16 @@ import { useState } from 'react'
 import {GoLocation} from 'react-icons/go'
 import RangeSlider from "./Slider";
 import HouseCard from './HouseCard'
-import initMap from './Map'
+import Map from './Map'
 
 const SearchResults = () => { 
-  const [values, setValues] = useState([0, 100]);
 
-  const handleChange = (values) => {
-    setValues(values);
-  };
-
-  const displayValues = values.map((value) => value * 1000);
+  const latitude = 37.7749; 
+  const longitude = -122.4194; 
   
   return (
     <div className="m-8">
-        <div className='inline-grid grid-cols-3 w-full'>
+        <div className='inline-grid grid-cols-3 w-3/4'>
             <h1 className="text-xl">Filters</h1>
             <div className="mt-4 col-start-1">
                 <h2 className="text-lg text-gray mb-4">Location</h2>
@@ -66,7 +62,7 @@ const SearchResults = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-start-2 col-span-2 mx-10">
+            <div className="col-start-2 mx-10">
                 <h1 className="text-2xl">241 Results</h1>
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
@@ -74,8 +70,8 @@ const SearchResults = () => {
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 
             </div>
-            <div>
-                <initMap />
+            <div className="col-start-3 h-full my-auto mr-4">
+                <Map latitude={latitude} longitude={longitude}/>
             </div>
         </div>
 

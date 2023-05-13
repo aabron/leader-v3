@@ -25,7 +25,7 @@ const RangeSlider = () => {
             renderTrack={({ props, children }) => (
                 <div
                   {...props}
-                  className="h-2 rounded-full bg-gray flex relative w-96"
+                  className="h-2 rounded-full bg-gray flex relative w-80"
                 >
                   <div
                     className="absolute h-full bg-black"

@@ -28,3 +28,8 @@ body {
   to { transform: rotate(360deg); }
 }
 
+#MapContainer{
+  height:500px;
+  width:50%;
+}
+
