@@ -6,6 +6,8 @@ module.exports = {
     colors: {
       'offwhite': '#EEEEEE' ,
       'navy': '#000080',
+      'black': '#000000',
+      'gray': '#999999'
     },
     fontFamily: {
       display: ["Rubik", "sans-serif"], 
