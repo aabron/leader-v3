@@ -1,18 +1,23 @@
 import React from 'react'
 import {GrNotification} from 'react-icons/gr'
 import {BsFillPersonFill} from 'react-icons/bs'
+import {BsFillArrowLeftCircleFill } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 const Tabs = () => {
   return (
     <div className="flex flex-row">
-        <div className="flex mt-2 mr-4 w-24 h-8 border-2 border-black rounded-xl justify-center items-center">
+        <div className="flex mt-2 mr-4 w-24 h-8 border-2 border-gray rounded-xl justify-center items-center hover:scale-105">
             Logout
         </div>
-        <div className="flex w-12 h-12 border-2 border-gray rounded-xl justify-center items-center">
+        <div className="flex mr-4 w-12 h-12 border-2 border-gray rounded-xl justify-center items-center hover:scale-105">
+            <BsFillArrowLeftCircleFill className="text-2xl  hover:to-black " onClick={useNavigate(-1)}/>
+        </div>
+        <div className="flex w-12 h-12 border-2 border-gray rounded-xl justify-center items-center hover:scale-105">
             <GrNotification className="text-2xl text-gray"/>
         </div>
-        <div className="flex ml-4 w-12 h-12 border-2 border-gray rounded-xl justify-center items-center">
-            <BsFillPersonFill className="text-2xl text-gray"/>
+        <div className="flex ml-4 w-12 h-12 border-2 border-gray rounded-xl justify-center items-center hover:scale-105">
+            <BsFillPersonFill className="text-2xl "/>
         </div>
     </div>
   )

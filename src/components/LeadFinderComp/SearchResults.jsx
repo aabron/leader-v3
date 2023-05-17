@@ -12,7 +12,7 @@ const SearchResults = () => {
   
   return (
     <div className="m-8">
-        <div className='inline-grid grid-cols-3 w-3/4'>
+        <div className='inline-grid grid-cols-3 w-3/4 max-w-[70rem]'>
             <h1 className="text-xl">Filters</h1>
             <div className="mt-4 col-start-1">
                 <h2 className="text-lg text-gray mb-4">Location</h2>
@@ -61,9 +61,17 @@ const SearchResults = () => {
                         <label className="mx-5 my-1"><input type="checkbox" id="topping" name="topping" value="Furnished" />    Furnished</label>
                     </div>
                 </div>
+                <div className=" inline-grid grid-cols-2 w-full h-12 mt-10 ">
+                    <button className="w-[90%] h-full border-black border-2 rounded-lg hover:scale-105 drop-shadow-xl">
+                        Find Lead
+                    </button>
+                    <button className="w-[90%] h-full border-black border-2 rounded-lg col-start-2 hover:scale-105 drop-shadow-xl">
+                        Reset Filters
+                    </button>
+                </div>
             </div>
             <div className="col-start-2 mx-10">
-                <h1 className="text-2xl">241 Results</h1>
+                <h1 className="text-2xl mx-5">241 Results</h1>
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
