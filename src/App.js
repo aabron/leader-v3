@@ -2,6 +2,7 @@
 import Hero from "./components/Hero.jsx";
 import "./index.css";
 import Leads from "./components/LeadFinderComp/Leads.jsx";
+import Comps from "./components/CompFinderComps/Comps.jsx";
 
 import {
   BrowserRouter as Router,
@@ -33,6 +34,9 @@ function App() {
           with exact path "/contactus", in 
           component props we passes the imported component*/}
           <Route path="/Leads" element={<Leads />} />
+
+          <Route path="/Comps" element={<Comps />} />
+          
 
           </Routes>
             

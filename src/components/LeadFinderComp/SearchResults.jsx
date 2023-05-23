@@ -15,6 +15,7 @@ const SearchResults = () => {
         <div className='inline-grid grid-cols-3 w-3/4 max-w-[70rem]'>
             <h1 className="text-xl">Filters</h1>
             <div className="mt-4 col-start-1">
+                <form>
                 <h2 className="text-lg text-gray mb-4">Location</h2>
                 <div>
                     <input id="location" type="text" placeholder="Detroit, MI" className="border border-gray-300 p-2 w-40" />
@@ -69,6 +70,7 @@ const SearchResults = () => {
                         Reset Filters
                     </button>
                 </div>
+                </form>
             </div>
             <div className="col-start-2 mx-10">
                 <h1 className="text-2xl mx-5">241 Results</h1>

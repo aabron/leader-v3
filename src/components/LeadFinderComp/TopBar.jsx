@@ -7,7 +7,7 @@ const TopBar = () => {
   return (
     <div className='flex flex-row justify-between items-center mx-8'>
         <div>
-          <img src={require('../images/logo.png')} className="h-20 mr-3" alt="Leader Logo" />
+          <img src={require('../images/logo.png')} className="h-20 mr-3" alt="Leader Logo"/>
         </div>
         <NameDate />
         <Tabs />
