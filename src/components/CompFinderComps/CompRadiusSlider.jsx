@@ -5,8 +5,8 @@ const MIN = 0;
 const MAX = 100;
 const STEP = 1;
 
-const RangeSlider = () => {
-  const [values, setValues] = useState([0, 100]);
+const CompRangeSlider = () => {
+  const [values, setValues] = useState([0.0, 100.0]);
 
   const handleChange = (newValues) => {
     setValues(newValues);
@@ -42,8 +42,8 @@ const RangeSlider = () => {
                   {...props}
                   className="w-4 h-4 bg-black rounded-full"
                 >
-                  <div className="text-white text-sm flex justify-center items-center h-full w-full my-5">
-                    {"$" +values[index] * 10000}
+                  <div className="text-white text-sm flex h-full w-16 my-5">
+                    {values[index] + " Miles"}
                   </div>
                 </div>
               )}
@@ -54,4 +54,4 @@ const RangeSlider = () => {
   );
 };
 
-export default RangeSlider;
+export default CompRangeSlider;
