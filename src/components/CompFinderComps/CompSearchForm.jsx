@@ -34,10 +34,10 @@ const CompSearchResults = () => {
                     <CompRangeSlider />
                 </div>
                 <div className=" inline-grid grid-cols-2 w-[60%] h-12 mt-16 ">
-                    <button className="w-[90%] h-full border-black border-2 rounded-lg hover:scale-105 drop-shadow-xl">
+                    <button className="w-[90%] h-full border-[#838383] border-2 rounded-lg hover:scale-105 shadow-lg">
                         Find Comps
                     </button>
-                    <button className="w-[90%] h-full border-black border-2 rounded-lg col-start-2 hover:scale-105 drop-shadow-xl">
+                    <button className="w-[90%] h-full border-[#838383] border-2 rounded-lg col-start-2 hover:scale-105 shadow-lg">
                         Reset Filters
                     </button>
                 </div>
@@ -46,8 +46,9 @@ const CompSearchResults = () => {
             <div className="col-start-2 h-full my-auto mx-28 ">
                 <Map latitude={latitude} longitude={longitude}/>
             </div>
-            <div className="col-start-2 row-start-2 h-full w-[977px] mx-28 inline-block">
-                <h1 className="text-2xl mx-auto flex justify-center items-center">Similar Properties</h1>
+            
+            <div className="col-start-2 row-start-2 h-full w-full mx-auto inline">
+                <h1 className="h-auto text-2xl mx-auto my-1 flex justify-center items-center">Similar Properties</h1>
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 
             </div>

@@ -63,10 +63,10 @@ const SearchResults = () => {
                     </div>
                 </div>
                 <div className=" inline-grid grid-cols-2 w-full h-12 mt-10 ">
-                    <button className="w-[90%] h-full border-black border-2 rounded-lg hover:scale-105 drop-shadow-xl">
+                    <button className="w-[90%] h-full border-[#838383] border-2 rounded-lg hover:scale-105 shadow-lg">
                         Find Lead
                     </button>
-                    <button className="w-[90%] h-full border-black border-2 rounded-lg col-start-2 hover:scale-105 drop-shadow-xl">
+                    <button className="w-[90%] h-full border-[#838383] border-2 rounded-lg col-start-2 hover:scale-105 shadow-lg">
                         Reset Filters
                     </button>
                 </div>
