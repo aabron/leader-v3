@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 import {register} from "./controllers/auth.js";
 
 //Config
@@ -41,6 +42,7 @@ app.post("auth/register", upload.single("picture"), register);
 
 //routes
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 //mongoose setup
 const port = process.env.PORT || 6001;
