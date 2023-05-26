@@ -11,7 +11,7 @@ import usePlacesAutocomplete, {
 var service;
 
 const mapStyles = {
-  width: '90%',
+  width: '70%',
   height: '50%'
 };
 

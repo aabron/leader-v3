@@ -48,7 +48,7 @@ const CompSearchResults = () => {
             </div>
             
             <div className="col-start-2 row-start-2 h-full w-full mx-auto inline">
-                <h1 className="h-auto text-2xl mx-auto my-1 flex justify-center items-center">Similar Properties</h1>
+                <h1 className="text-2xl mx-auto my-1 flex justify-center items-center">Similar Properties</h1>
                 <HouseCard type="Modern House" loc="Detroit, MI" price="300" ppx="month" />
                 
             </div>
