@@ -33,8 +33,8 @@ const UserSchema = new mongoose.Schema(
             type: Array,
             default: [],
         },
-        userRole: String,
-        userCompany: String,
+        userBrokerage: String,
+        userLocation: String,
         memberTime: Number,
     },
     {timestamps: true}

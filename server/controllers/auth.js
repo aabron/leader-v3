@@ -12,8 +12,8 @@ export const register = async(req, res) => {
             userPassword,
             picturePath,
             userFriends,
-            userRole,
-            userCompany,
+            userBrokerage,
+            userLocation,
             memberTime
         } = req.body;
 
@@ -26,8 +26,8 @@ export const register = async(req, res) => {
             userPassword: passHash,
             picturePath,
             userFriends,
-            userRole,
-            userCompany,
+            userBrokerage,
+            userLocation,
             memberTime: Math.floor(Math.random()* 24)
         });
         const savedUser = await newUser.save();

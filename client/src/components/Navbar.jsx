@@ -10,7 +10,7 @@ const { directive } = require("@babel/types");
 function Navbar()
 {
 
-    const locations = ['About' , 'Leads', 'Comps', 'Sign Up'];
+    const locations = ['About' , 'Leads', 'Comps', 'SignUp'];
 
     return(
 

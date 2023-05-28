@@ -3,6 +3,7 @@ import Hero from "./components/Hero.jsx";
 import "./index.css";
 import Leads from "./components/LeadFinderComp/Leads.jsx";
 import Comps from "./components/CompFinderComps/Comps.jsx";
+import Signup from "./components/SignUpComp/Signup.jsx";
 
 import {
   BrowserRouter as Router,
@@ -37,6 +38,7 @@ function App() {
 
           <Route path="/Comps" element={<Comps />} />
           
+          <Route path="/Signup" element={<Signup />}/>
 
           </Routes>
             
