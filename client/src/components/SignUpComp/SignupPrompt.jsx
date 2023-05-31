@@ -1,24 +1,76 @@
 import React, { useState, useRef  } from 'react';
 import { useTransition, animated } from 'react-spring';
+import * as yup from "yup";
+import Dropzone from "react-dropzone";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Formik } from "formik";
 
+const registerSchema = yup.object().shape({
+    firstName: yup.string().required("required"),
+    lastName: yup.string().required("required"),
+    userEmail: yup.string().email("invalid email").required("required"),
+    userPassword: yup.string().required("required"),
+    userLocation: yup.string().optional("optional"),
+    userBrokerage: yup.string().optional("optional"),
+});
+const initialValues = {
+    firstName: "",
+    lastName: "",
+    userEmail: "",
+    userPassword: "",
+    userLocation: "",
+    userBrokerage: "",
+}
 
 
 const SignupPrompt = ({ handleCardSwitch}) => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle signup submission
-        // ...
+    const handleRegister = async(values, onSubmitProps) => {
+        const formData = new FormData();
+        for(let value in values){
+            formData.append(value, values[value]);
+        }
+
+        const savedUserResponse = await fetch(
+            "http://localhost:6001/auth/register",
+            {
+                method: "POST",
+                body: formData,
+                
+            }
+        );
+
+        const savedUser = await savedUserResponse.json();
+        onSubmitProps.resetForm();
+
+        // if(savedUser) {
+        //     setPageType("login");
+        // }
+    };
+
+    const handleFormSubmit = async(values, onSubmitProps) =>{
+        handleRegister(values, onSubmitProps);
     };
 
     return (
+        <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={registerSchema}>
+        {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleSubmit,
+            setFieldValue,
+            resetForm,
+        }) => (
         <form onSubmit={handleSubmit}>
             {/* Signup form fields */}
             <div className="mb-4">
                 <label htmlFor="firstName" className="block text-sm text-black font-bold mb-2">
                 First Name
                 </label>
-                <input type="text" id="firstName" className="w-full px-3 py-2 rounded bg-gray-100 border border-gray-300 focus:outline-none" required/>
+                <input value={values.firstName} init type="text" id="firstName" className="w-full px-3 py-2 rounded bg-gray-100 border border-gray-300 focus:outline-none" required/>
             </div>
             <div className="mb-4">
                 <label htmlFor="lastName" className="block text-sm text-black font-bold mb-2">
@@ -58,6 +110,9 @@ const SignupPrompt = ({ handleCardSwitch}) => {
                 </button>
             </div>
         </form>
+        )}
+        
+        </Formik>
     );
 };
 
