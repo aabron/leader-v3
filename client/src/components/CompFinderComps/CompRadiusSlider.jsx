@@ -14,7 +14,7 @@ const CompRangeSlider = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-full">
+      <div className="w-[100%]">
         <div className="w-full h-2 rounded-full bg-gray-300">
         <Range
             values={values}

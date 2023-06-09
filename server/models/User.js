@@ -25,17 +25,8 @@ const UserSchema = new mongoose.Schema(
             require: true,
             min: 10,
         },
-        picturePath: {
-            type: String,
-            default: " ",
-        },
-        userFriends: {
-            type: Array,
-            default: [],
-        },
         userBrokerage: String,
         userLocation: String,
-        memberTime: Number,
     },
     {timestamps: true}
 );
