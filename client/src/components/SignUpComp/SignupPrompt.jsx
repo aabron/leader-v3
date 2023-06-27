@@ -6,14 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Formik } from "formik";
 
-const registerSchema = yup.object().shape({
-    firstName: yup.string().required("required"),
-    lastName: yup.string().required("required"),
-    userEmail: yup.string().email("invalid email").required("required"),
-    userPassword: yup.string().required("required"),
-    userLocation: yup.string().optional("optional"),
-    userBrokerage: yup.string().optional("optional"),
-});
 const initialValues = {
     firstName: "",
     lastName: "",
@@ -26,31 +18,8 @@ const initialValues = {
 
 const SignupPrompt = ({ handleCardSwitch}) => {
 
-    const handleRegister = async(values, onSubmitProps) => {
-        const formData = new FormData();
-        for(let value in values){
-            formData.append(value, values[value]);
-        }
-
-        const savedUserResponse = await fetch(
-            "http://localhost:6001/auth/register",
-            {
-                method: "POST",
-                body: formData,
-                
-            }
-        );
-
-        const savedUser = savedUserResponse.json();
-        onSubmitProps.resetForm();
-
-        // if(savedUser) {
-        //     setPageType("login");
-        // }
-    };
-
     const handleFormSubmit = async(values, onSubmitProps) => {
-        handleRegister(values, onSubmitProps);
+        //handleRegister(values, onSubmitProps);
     };
 
     return (
