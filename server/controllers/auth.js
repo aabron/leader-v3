@@ -10,20 +10,25 @@ export const register = async(req, res) => {
             lastName,
             userEmail,
             userPassword,
+            picturePath,
+            userFriends,
             userBrokerage,
             userLocation,
+            memberTime
         } = req.body;
 
         const salt = await bcrypt.genSalt();
         const passHash = await bcrypt.hash(userPassword, salt);
-        console.log(userPassword);
         const newUser = new User({
             firstName,
             lastName,
             userEmail,
             userPassword: passHash,
+            picturePath,
+            userFriends,
             userBrokerage,
             userLocation,
+            memberTime: Math.floor(Math.random()* 24)
         });
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
