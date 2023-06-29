@@ -4,6 +4,7 @@ import "./index.css";
 import Leads from "./components/LeadFinderComp/Leads.jsx";
 import Comps from "./components/CompFinderComps/Comps.jsx";
 import Signup from "./components/SignUpComp/Signup.jsx";
+import { ConfirmEmail } from "./lib/helper/supabaseClient.js";
 
 import {
   BrowserRouter as Router,
@@ -29,7 +30,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Hero />} />
 
-
+          <Route path="/confirm-email" element={<ConfirmEmail />} />
             
           {/* This route is for contactus component
           with exact path "/contactus", in 

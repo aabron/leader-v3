@@ -16,7 +16,9 @@ const Signup = () => {
     <div>
     <SignupTopBar/>
     <div className="flex justify-center items-center h-screen">
-      <div className="w-96 rounded-md shadow-xl bg-white">
+      <div className="w-96 rounded-md shadow-lg shadow-black bg-white">
+        <div className='justify-center items-center flex'><button>Login with Google</button></div>
+        
         <div className="flex justify-between items-center p-4">
           <h2 className="text-2xl font-bold text-black">
             {isLoginVisible ? 'Login' : 'Signup'}
@@ -47,6 +49,7 @@ const Signup = () => {
             </div>
         </div>
       </div>
+      
     </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import React from 'react'
+import { supabase } from '../../lib/helper/supabaseClient';
 
 const NameDate = (props) => {
 
-    let newDate = new Date()
+    let metadata = user.user_metadata;
+    let newDate = new Date();
     let date = newDate.getDate();
     let symbol = getSymbol(date)
     let month = newDate.getMonth() + 1;
@@ -11,6 +13,7 @@ const NameDate = (props) => {
     let actDay = getActDay(day)
     let hour = newDate.getHours();
     let minutes = newDate.getMinutes();
+    
 
     function getSymbol(date) {
         if (date === 1 || date === 21 || date === 31) {
@@ -37,7 +40,7 @@ const NameDate = (props) => {
 
     return (
         <div className='mt-8 flex flex-col w-fit'>
-            <div className='text-2xl'>Welcome, Aaron</div>
+            <div className='text-2xl'>Welcome, {metadata}</div>
             <div className='text-gray'>
                 {actDay + ', '}{actMonth} {date}{symbol} {hour}:{minutes}
             </div>
