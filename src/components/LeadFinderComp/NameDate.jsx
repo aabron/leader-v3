@@ -1,9 +1,9 @@
 import React from 'react'
 import { supabase } from '../../lib/helper/supabaseClient';
+import { getUserName } from '../../lib/helper/supabaseClient';
 
 const NameDate = (props) => {
 
-    let metadata = user.user_metadata;
     let newDate = new Date();
     let date = newDate.getDate();
     let symbol = getSymbol(date)
@@ -13,6 +13,10 @@ const NameDate = (props) => {
     let actDay = getActDay(day)
     let hour = newDate.getHours();
     let minutes = newDate.getMinutes();
+    let userName = getUserName;
+
+    //const {user, session, error} = await supabase.auth.getUser();
+    //const firstName = await supabase.from('users').select('raw_user_metadata -> first_name').eq('id', user.id);
     
 
     function getSymbol(date) {
@@ -40,7 +44,7 @@ const NameDate = (props) => {
 
     return (
         <div className='mt-8 flex flex-col w-fit'>
-            <div className='text-2xl'>Welcome, {metadata}</div>
+            <div className='text-2xl'>Welcome, {userName}</div>
             <div className='text-gray'>
                 {actDay + ', '}{actMonth} {date}{symbol} {hour}:{minutes}
             </div>

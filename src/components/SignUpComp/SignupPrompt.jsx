@@ -42,7 +42,14 @@ const SignupPrompt = ({ handleCardSwitch}) => {
                     }
                 }
             } 
-        )
+        );
+        const account = await supabase.from('account').insert(
+        {
+            first_name: values.firstName , 
+            last_name: values.lastName ,
+            user_brokerage: values.userBrokerage,
+            user_location: values.location, 
+        });
     };
     
     return (

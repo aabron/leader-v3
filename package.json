@@ -11,6 +11,7 @@
     "formik": "^2.4.0",
     "google-map-react": "^2.2.0",
     "google-maps-react": "^2.0.6",
+    "next": "^13.4.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
@@ -53,5 +54,10 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.1"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }

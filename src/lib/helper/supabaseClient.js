@@ -9,6 +9,11 @@ export const supabase = createClient(
     process.env.REACT_APP_SUPABASE_ANON_KEY
 );
 
+export const getUserName = async async => {
+    const {user, session, error} = await supabase.auth.getUser();
+    const firstName = await supabase.from('users').select('raw_user_metadata -> first_name').eq('id', user.id);
+}
+
 export function ConfirmEmail() {
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
