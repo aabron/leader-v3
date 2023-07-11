@@ -5,11 +5,11 @@ import { supabase } from '../../lib/helper/supabaseClient';
 const LoginForm = ({ handleCardSwitch }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useNavigate();
+  const nav = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { user, session, error } = await supabase.auth.signIn({
+    const { user, session, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
@@ -17,7 +17,7 @@ const LoginForm = ({ handleCardSwitch }) => {
       alert('Error with Login:' + error.message);
     } else {
       // once login is successful, redirect to dashboard
-      history.push('/Leads');
+      nav("/Leads");
     }
   };
 

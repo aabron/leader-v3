@@ -1,6 +1,7 @@
 import React from 'react'
 import { supabase } from '../../lib/helper/supabaseClient';
-import { getUserName } from '../../lib/helper/supabaseClient';
+import userData from '../../lib/helper/useUserData';
+
 
 const NameDate = (props) => {
 
@@ -13,7 +14,7 @@ const NameDate = (props) => {
     let actDay = getActDay(day)
     let hour = newDate.getHours();
     let minutes = newDate.getMinutes();
-    let userName = getUserName;
+    const {user, userMetaData} = userData();
 
     //const {user, session, error} = await supabase.auth.getUser();
     //const firstName = await supabase.from('users').select('raw_user_metadata -> first_name').eq('id', user.id);
@@ -44,7 +45,7 @@ const NameDate = (props) => {
 
     return (
         <div className='mt-8 flex flex-col w-fit'>
-            <div className='text-2xl'>Welcome, {userName}</div>
+            <div className='text-2xl'>Welcome, {userMetaData?.first_name}</div>
             <div className='text-gray'>
                 {actDay + ', '}{actMonth} {date}{symbol} {hour}:{minutes}
             </div>
